@@ -1,0 +1,27 @@
+{
+    "name": "lytc/governmentaffair",
+    "description": "浙里办政务服务",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "落雨听禅",
+            "email": "https://github.com/jingxiaowang1993"
+        }
+    ],
+    "require": {
+        "laravel/framework": "6.*",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Government\\Affair\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Government\\Affair\\ServiceProvider"
+            ]
+        }
+    }
+}
