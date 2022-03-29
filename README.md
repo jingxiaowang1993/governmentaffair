@@ -6,7 +6,7 @@
 ## Installation
 
 ```shell
-composer require jxw/governmentaffair -vvv
+composer require golive_jxw/governmentaffair -vvv
 ```
 ## Configuration
 The defaults configuration settings are set in config/governmentaffair.php. Copy this file to your own config directory to modify the values. You can publish the config using this command:
