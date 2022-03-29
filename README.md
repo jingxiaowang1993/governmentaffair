@@ -6,7 +6,7 @@
 ## Installation
 
 ```shell
-composer require government/affair -vvv
+composer require lytc/governmentaffair -vvv
 ```
 ## Configuration
 The defaults configuration settings are set in config/governmentaffair.php. Copy this file to your own config directory to modify the values. You can publish the config using this command:
