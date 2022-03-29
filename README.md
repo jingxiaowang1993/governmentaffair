@@ -13,7 +13,7 @@ The defaults configuration settings are set in config/governmentaffair.php. Copy
 ```shell
 php artisan vendor:publish --provider="Government\Affair\ServiceProvider"
 ```
-## 使用
+## Usage
 SingleSignOn
 ```php
 $user = new \Government\Affair\Classes\User();
