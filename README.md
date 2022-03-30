@@ -1,6 +1,6 @@
 <h1 align="center"> GovernmentAffair </h1>
 
-<p align="center"> for Zhejiang</p>
+<p align="center"> for Laravel</p>
 
 
 ## Installation
