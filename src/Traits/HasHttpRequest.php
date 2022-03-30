@@ -89,7 +89,7 @@ trait HasHttpRequest
     /**
      * @return array
      */
-    protected function getBaseOptions(): array
+    protected function getBaseOptions()
     {
         return [
             'base_uri' => config('governmentaffair.zjgxfwxt-base-uri'),

@@ -14,19 +14,21 @@ The defaults configuration settings are set in config/governmentaffair.php. Copy
 php artisan vendor:publish --provider="Government\Affair\ServiceProvider"
 ```
 ## Usage
+
 SingleSignOn
 ```php
-$user = new \Government\Affair\Classes\User();
+use Government\Affair\Classes\User;
+
+
+$user = new User();
 return $user->auth($goto);
 ```
 TicketAuthentication
 ```php
-$user = new \Government\Affair\Classes\User();
 return $user->ticket($ticket);
 ```
 UserInfo
 ```php
-$user = new \Government\Affair\Classes\User();
 return $user->info($token);
 ```
 ## License

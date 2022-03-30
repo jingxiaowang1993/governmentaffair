@@ -25,7 +25,7 @@ class User extends Base
      * @return array
      * @throws InvalidArgumentException
      */
-    public function ticket($ticket): array
+    public function ticket($ticket)
     {
         if (!$ticket) {
             throw new InvalidArgumentException('Invalid ticket：' . $ticket);
@@ -54,7 +54,7 @@ class User extends Base
      * @return array
      * @throws InvalidArgumentException
      */
-    public function info($token): array
+    public function info($token)
     {
         if (!$token) {
             throw new InvalidArgumentException('Invalid token：' . $token);

@@ -10,12 +10,12 @@ class Base implements GatewayInterface
 {
     use HasHttpRequest;
 
-    protected array $headers = [];
-    protected array $params = [];
-    private string $serviceCode = '';
-    private string $secretKey = '';
-    protected array $requestHeadersData = [];
-    protected array $requestParamsData = [];
+    protected $headers = [];
+    protected $params = [];
+    private $serviceCode = '';
+    private $secretKey = '';
+    protected $requestHeadersData = [];
+    protected $requestParamsData = [];
 
 
     public function __construct()
@@ -53,7 +53,7 @@ class Base implements GatewayInterface
     /**
      * @return array
      */
-    public function getHeaders(): array
+    public function getHeaders()
     {
         return $this->headers;
     }
@@ -61,7 +61,7 @@ class Base implements GatewayInterface
     /**
      * @param array $headers
      */
-    public function setHeaders(array $headers): void
+    public function setHeaders($headers)
     {
         $this->headers = $headers;
     }
@@ -69,7 +69,7 @@ class Base implements GatewayInterface
     /**
      * @return string
      */
-    public function getServiceCode(): string
+    public function getServiceCode()
     {
         return $this->serviceCode;
     }
@@ -77,7 +77,7 @@ class Base implements GatewayInterface
     /**
      * @param string $serviceCode
      */
-    public function setServiceCode(string $serviceCode): void
+    public function setServiceCode($serviceCode)
     {
         $this->serviceCode = $serviceCode;
     }
@@ -85,7 +85,7 @@ class Base implements GatewayInterface
     /**
      * @return string
      */
-    public function getSecretKey(): string
+    public function getSecretKey()
     {
         return $this->secretKey;
     }
@@ -93,7 +93,7 @@ class Base implements GatewayInterface
     /**
      * @param string $secretKey
      */
-    public function setSecretKey(string $secretKey): void
+    public function setSecretKey($secretKey)
     {
         $this->secretKey = $secretKey;
     }
@@ -101,7 +101,7 @@ class Base implements GatewayInterface
     /**
      * @return array
      */
-    public function getRequestParamsData(): array
+    public function getRequestParamsData()
     {
         return $this->requestParamsData;
     }
@@ -109,7 +109,7 @@ class Base implements GatewayInterface
     /**
      * @param array $requestParamsData
      */
-    public function setRequestParamsData(array $requestParamsData): void
+    public function setRequestParamsData($requestParamsData)
     {
         $this->requestParamsData = array_merge($this->getParams(), $requestParamsData);
     }
@@ -117,7 +117,7 @@ class Base implements GatewayInterface
     /**
      * @return array
      */
-    public function getParams(): array
+    public function getParams()
     {
         return $this->params;
     }
@@ -125,7 +125,7 @@ class Base implements GatewayInterface
     /**
      * @param array $params
      */
-    public function setParams(array $params): void
+    public function setParams($params)
     {
         $this->params = $params;
     }
@@ -133,7 +133,7 @@ class Base implements GatewayInterface
     /**
      * @return array
      */
-    public function getRequestHeadersData(): array
+    public function getRequestHeadersData()
     {
         return $this->requestHeadersData;
     }
@@ -141,12 +141,12 @@ class Base implements GatewayInterface
     /**
      * @param array $requestHeadersData
      */
-    public function setRequestHeadersData(array $requestHeadersData): void
+    public function setRequestHeadersData($requestHeadersData)
     {
         $this->requestHeadersData = array_merge($this->getHeaders(), $requestHeadersData);
     }
 
-    public function resultHandle($result): array
+    public function resultHandle($result)
     {
         //返回数据处理
         $return = [
