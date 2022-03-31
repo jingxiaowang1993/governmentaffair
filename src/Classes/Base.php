@@ -157,19 +157,19 @@ class Base implements GatewayInterface
         //正常响应数据(HttpStatus=200)
         $result_data = $result['data'];
         //网关服务错误
-        if ($result_data['code'] < 0) {
+        if ($result['code'] < 0) {
             $return['code'] = 500;
-            $return['msg'] = $result_data['message'];
+            $return['msg'] = $result['message'];
             return $return;
         }
         //资源服务错误
-        if ($result_data['data']['result'] != 0) {
+        if ($result_data['result'] != 0) {
             $return['code'] = 500;
-            $return['msg'] = $result_data['data']['errmsg'];
+            $return['msg'] = $result_data['errmsg'];
             return $return;
         }
         //响应成功
-        $return['data'] = $result_data['data'];
+        $return['data'] = $result_data;
         return $return;
 
     }
