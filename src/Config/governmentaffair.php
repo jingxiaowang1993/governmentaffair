@@ -1,9 +1,9 @@
 <?php
 return [
     //根域名
-    'zjgxfwxt-base-uri' => env('ZJGXFWXT-BASE-URI', ''),
+    'zjgxfwxt_base_uri' => env('ZJGXFWXT_BASE_URI', ''),
     //应用访问授权码（AK）
-    'zjgxfwxt-access-key' => env('ZJGXFWXT-ACCESS-KEY', ''),
+    'zjgxfwxt_access_key' => env('ZJGXFWXT_ACCESS_KEY', ''),
     //应用访问密钥（SK）
-    'zjgxfwxt-secret-key' => env('ZJGXFWXT-SECRET-KEY', ''),
+    'zjgxfwxt_secret_key' => env('ZJGXFWXT_SECRET_KEY', ''),
 ];

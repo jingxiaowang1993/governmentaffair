@@ -21,9 +21,9 @@ class Base implements GatewayInterface
     public function __construct()
     {
         //应用访问授权码（AK）
-        $this->setServiceCode(config('governmentaffair.zjgxfwxt-access-key'));
+        $this->setServiceCode(config('governmentaffair.zjgxfwxt_access_key'));
         //应用访问密钥（SK）
-        $this->setSecretKey(config('governmentaffair.zjgxfwxt-secret-key'));
+        $this->setSecretKey(config('governmentaffair.zjgxfwxt_secret_key'));
         //网关服务
         $this->gateway();
     }

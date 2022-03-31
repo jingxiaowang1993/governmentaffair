@@ -92,7 +92,7 @@ trait HasHttpRequest
     protected function getBaseOptions()
     {
         return [
-            'base_uri' => config('governmentaffair.zjgxfwxt-base-uri'),
+            'base_uri' => config('governmentaffair.zjgxfwxt_base_uri'),
             'timeout' => 30,
         ];
     }
