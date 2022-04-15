@@ -49,7 +49,7 @@ class User extends Base
             ];
         } else {
             $endPoint = '/restapi/prod/IC33000020220228000002/sso/servlet/simpleauth';
-            $headers = $this->getHeaders($endPoint);
+            $headers = $this->getSelfHeaders($endPoint);
         }
 
         //设置header
@@ -86,7 +86,7 @@ class User extends Base
             ];
         } else {
             $endPoint = '/restapi/prod/IC33000020220228000004/sso/servlet/simpleauth';
-            $headers = $this->getHeaders($endPoint);
+            $headers = $this->getSelfHeaders($endPoint);
         }
         //设置header
         $this->setRequestHeadersData($headers);
@@ -100,7 +100,7 @@ class User extends Base
      * @param $endPoint
      * @return array
      */
-    public function getHeaders($endPoint)
+    public function getSelfHeaders($endPoint)
     {
         $signing_string = 'POST' . "\n" . $endPoint . "\n" . '' . "\n" . $this->getServiceCode() . "\n" . $this->getDateTime() . "\n";
         $signing_string = hash_hmac("sha256", $signing_string, $this->getSecretKey(), true);
