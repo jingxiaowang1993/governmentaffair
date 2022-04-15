@@ -6,4 +6,6 @@ return [
     'zjgxfwxt_access_key' => env('ZJGXFWXT_ACCESS_KEY', ''),
     //应用访问密钥（SK）
     'zjgxfwxt_secret_key' => env('ZJGXFWXT_SECRET_KEY', ''),
+    //应用请求方式
+    'zjgxfwxt_call_method' => env('ZJGXFWXT_CALL_METHOD', '1'),
 ];

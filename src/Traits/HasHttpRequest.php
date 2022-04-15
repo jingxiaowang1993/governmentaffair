@@ -1,4 +1,5 @@
 <?php
+
 namespace Government\Affair\Traits;
 
 use Government\Affair\Exceptions\HttpException;
@@ -13,7 +14,6 @@ trait HasHttpRequest
      * @param $headers
      * @return mixed|string
      * @throws HttpException
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function get($endpoint, $query = [], $headers = [])
     {
@@ -29,7 +29,6 @@ trait HasHttpRequest
      * @param $headers
      * @return mixed|string
      * @throws HttpException
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function post($endpoint, $params = [], $headers = [])
     {
@@ -58,9 +57,8 @@ trait HasHttpRequest
      * @param $method
      * @param $endpoint
      * @param $options
-     * @return mixed|string
+     * @return mixed
      * @throws HttpException
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function request($method, $endpoint, $options = [])
     {
@@ -68,7 +66,7 @@ trait HasHttpRequest
             //初始化
             $client = new Client($this->getBaseOptions());
             //请求
-            $response = $client->request($method,$endpoint,$options);
+            $response = $client->request($method, $endpoint, $options);
             //响应类型
             $contentType = $response->getHeaderLine('Content-Type');
             //响应内容
@@ -81,7 +79,7 @@ trait HasHttpRequest
             }
             //原始返回
             return $contents;
-        }catch (TransferException $transferException){
+        } catch (TransferException $transferException) {
             throw new HttpException($transferException->getMessage());
         }
     }
