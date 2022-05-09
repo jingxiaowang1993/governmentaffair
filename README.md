@@ -21,15 +21,23 @@ use Government\Affair\Classes\User;
 
 
 $user = new User();
-return $user->auth($goto);
+$user->auth($goto);
 ```
 TicketAuthentication
 ```php
-return $user->ticket($ticket);
+use Government\Affair\Classes\User;
+
+
+$user = new User();
+$user->ticket($ticket);
 ```
 UserInfo
 ```php
-return $user->info($token);
+use Government\Affair\Classes\User;
+
+
+$user = new User();
+$user->info($token);
 ```
 ## License
 

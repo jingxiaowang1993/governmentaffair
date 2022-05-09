@@ -10,7 +10,7 @@ class User extends Base
 {
     /**
      * @param $goto
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return string
      */
     public function auth($goto)
     {
@@ -19,7 +19,7 @@ class User extends Base
         //附带跳转地址，以sp参数返回
         //跳转政务服务进行用户登录
         $redirectUrl = 'https://puser.zjzwfw.gov.cn/sso/mobile.do?action=oauth&scope=1&servicecode=' . $serviceCode . '&goto=' . $goto;
-        return redirect($redirectUrl);
+        return $redirectUrl;
     }
 
     /**
