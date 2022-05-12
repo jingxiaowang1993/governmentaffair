@@ -10,15 +10,20 @@ class User extends Base
 {
     /**
      * @param $goto
+     * @param $type
      * @return string
      */
-    public function auth($goto)
+    public function auth($goto, $type = 'ZhejiangOffice')
     {
         //应用key
         $serviceCode = $this->getServiceCode();
         //附带跳转地址，以sp参数返回
         //跳转政务服务进行用户登录
-        $redirectUrl = 'https://puser.zjzwfw.gov.cn/sso/mobile.do?action=oauth&scope=1&servicecode=' . $serviceCode . '&goto=' . $goto;
+        if ($type == 'ZhejiangOffice') {//同源APP入口（含浙里办APP及其他同源适配APP容器环境）
+            $redirectUrl = 'https://puser.zjzwfw.gov.cn/sso/mobile.do?action=oauth&scope=1&servicecode=' . $serviceCode . '&goto=' . $goto;
+        } else {//支付宝入口
+            $redirectUrl = 'https://puser.zjzwfw.gov.cn/sso/alipay.do?action=ssoLogin&servicecode=' . $serviceCode . '&goto=' . $goto;
+        }
         return $redirectUrl;
     }
 

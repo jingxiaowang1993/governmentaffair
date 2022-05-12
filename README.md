@@ -19,9 +19,11 @@ SingleSignOn
 ```php
 use Government\Affair\Classes\User;
 
+//alipay-支付宝入口
+//ZhejiangOffice-同源APP入口（含浙里办APP及其他同源适配APP容器环境）
 
 $user = new User();
-$user->auth($goto);
+$user->auth($goto,'ZhejiangOffice');
 ```
 TicketAuthentication
 ```php
