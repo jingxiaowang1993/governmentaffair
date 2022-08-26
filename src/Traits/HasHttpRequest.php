@@ -4,6 +4,7 @@ namespace Government\Affair\Traits;
 
 use Government\Affair\Exceptions\HttpException;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\TransferException;
 
 trait HasHttpRequest
@@ -28,6 +29,7 @@ trait HasHttpRequest
      * @param $params
      * @param $headers
      * @return mixed|string
+     * @throws GuzzleException
      * @throws HttpException
      */
     protected function post($endpoint, $params = [], $headers = [])
@@ -43,6 +45,7 @@ trait HasHttpRequest
      * @param $params
      * @param $headers
      * @return mixed|string
+     * @throws GuzzleException
      * @throws HttpException
      */
     protected function postJson($endpoint, $params = [], $headers = [])
@@ -57,8 +60,9 @@ trait HasHttpRequest
      * @param $method
      * @param $endpoint
      * @param $options
-     * @return mixed
+     * @return mixed|string
      * @throws HttpException
+     * @throws GuzzleException
      */
     protected function request($method, $endpoint, $options = [])
     {

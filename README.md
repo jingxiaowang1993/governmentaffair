@@ -27,18 +27,26 @@ $user->auth($goto,'ZhejiangOffice');
 ```
 TicketAuthentication
 ```php
+//alipay-支付宝入口
+//ZhejiangOffice-同源APP入口（含浙里办APP及其他同源适配APP容器环境）
 use Government\Affair\Classes\User;
-
-
 $user = new User();
+$user->ticket($ticket);
+//wechat-微信小程序入口
+use Government\Affair\Classes\Wechat;
+$user = new Wechat();
 $user->ticket($ticket);
 ```
 UserInfo
 ```php
+//alipay-支付宝入口
+//ZhejiangOffice-同源APP入口（含浙里办APP及其他同源适配APP容器环境）
 use Government\Affair\Classes\User;
-
-
 $user = new User();
+$user->info($token);
+//wechat-微信小程序入口
+use Government\Affair\Classes\Wechat;
+$user = new Wechat();
 $user->info($token);
 ```
 ## License

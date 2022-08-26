@@ -176,6 +176,10 @@ class Base implements GatewayInterface
         $this->callMethod = $callMethod;
     }
 
+    /**
+     * @param $result
+     * @return array
+     */
     public function resultHandle($result)
     {
         //返回数据处理
@@ -194,6 +198,36 @@ class Base implements GatewayInterface
         if (isset($result['result']) && $result['result'] != 0) {
             $return['code'] = 500;
             $return['msg'] = $result['errmsg'];
+            return $return;
+        }
+        //响应成功
+        $return['data'] = $result;
+        return $return;
+
+    }
+
+    /**
+     * @param $result
+     * @return array
+     */
+    public function resultHandleWechat($result)
+    {
+        //返回数据处理
+        $return = [
+            'code' => 200,
+            'msg' => '成功',
+            'data' => []
+        ];
+        //网关服务错误
+        if (isset($result['code']) && $result['code'] < 0) {
+            $return['code'] = 500;
+            $return['msg'] = $result['message'];
+            return $return;
+        }
+        //资源服务错误
+        if (isset($result['success']) && !$result['success']) {
+            $return['code'] = 500;
+            $return['msg'] = $result['errorMsg'];
             return $return;
         }
         //响应成功
